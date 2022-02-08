@@ -1,45 +1,18 @@
 /* Write a function to do the division operation without using the built-in division*/
 
 function division(number, dividedBy){
-    // Write you logic here.
-        if(number<dividedBy)
-        return 0;
-        return 1 + division(number-dividedBy, dividedBy);
-     
+    let x;
+    if (dividedBy != 0 ){
+        x = number / dividedBy
+    }
+    else{
+        x =0
+    }
+
+    return x
+    
 }
-
-
-function division(num1, num2)
-{
-    if (num1 == 0)
-        return 0;
-    if (num2 == 0)
-        return Number.MAX_VALUE;;
-    let negResult = false;
-
-    if (num1 < 0)
-    {
-        num1 = -num1;
-        if (num2 < 0)
-            num2 = -num2;
-        else
-            negResult = true;
-    }
-    else if (num2 < 0)
-    {
-        num2 = -num2;
-        negResult = true;
-    }
-    let quotient = 0;
-    while (num1 >= num2)
-    {
-        num1 = num1 - num2;
-        quotient++;
-    }
-    if (negResult)
-        quotient = -quotient;
-    return quotient;
-}
+division(4,2)
 
 /* Write a function that implement Math.pow(x,n) but using recursion
 Example:
@@ -48,27 +21,15 @@ pow(2,4) = 16
 
 
 function pow(x,n){
-    // Write you logic here.
-    if( n==0) 
-    return 1;
-    else
-    return x*pow(x,n-1);
+    if (n === 1){
+        return x;
+    }
+    else{
+        return x * pow(x,n-1) 
+    }
 }
+pow(3,5)
 
-
-function pow(x,n){
-if (n == 0)   {return 1} 
-if (n == 1)   {return x} 
-if (n == even) { 
-       p = pow(x, n/2) 
-       return p * p 
-      } 
-if (n == odd) { 
-      p = pow(x, (n-1)/2) 
-      return x * p * p 
-    } 
-return 1/pow(x, -n)
-}
 /* The Fibonacci Series is a numeric series starting with the integers 0 and 1. In this series,
 the next integer is determined by summing the previous two. This gives us:
 0, 1, 1, 2, 3, 5, 8, 13, ...
@@ -76,21 +37,15 @@ Write a function that take n as parameter and return the nth element in the Fibo
 Example: n = 4 ==> 3, n= 0 ==> 0, n = 3 ==> 2 */
 
 function fibonacci(n){
-    // Write you logic here.
-    if(n==0){
-        return 0
-
-    }
-    else if (n==1){
-        return 1
+    if (n == 1 || n == 0){
+        return n;
     }
     else{
-        return fibonacci(n-1)+fibonacci(n-2);
+        return fibonacci(n-1)+fibonacci(n-2)} 
 
-    }
     
 }
-
+fibonacci(8)
 /* Optional 
 The set [1, 2, 3, ..., n] contains a total of n! unique permutations.
 By listing and labeling all of the permutations in order, we get the following sequence for n = 3:
